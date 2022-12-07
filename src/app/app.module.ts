@@ -25,6 +25,18 @@ const myRoute=[
   {
     path:"userregistration",
     component:UserregistrationComponent
+  },
+  {
+    path:"addproduct",
+    component:AddproductComponent
+  },
+  {
+    path:"searchproduct",
+    component:SearchproductComponent
+  },
+  {
+    path:"viewproduct",
+    component:ViewproductComponent
   }
 ]
 
