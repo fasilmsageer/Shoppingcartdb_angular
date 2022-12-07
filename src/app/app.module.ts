@@ -12,6 +12,8 @@ import { UserregistrationComponent } from './userregistration/userregistration.c
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 const myRoute=[
   {
@@ -37,6 +39,10 @@ const myRoute=[
   {
     path:"viewproduct",
     component:ViewproductComponent
+  },
+  {
+    path:"searchviewproduct",
+    component:SearchviewproductComponent
   }
 ]
 
@@ -55,7 +61,9 @@ const myRoute=[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(myRoute)
+    RouterModule.forRoot(myRoute),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
