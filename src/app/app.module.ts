@@ -11,6 +11,22 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserregistrationComponent } from './userregistration/userregistration.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+
+const myRoute=[
+  {
+    path:"",
+    component:AdminloginComponent
+  },
+  {
+    path:"userlogin",
+    component:UserloginComponent
+  },
+  {
+    path:"userregistration",
+    component:UserregistrationComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -26,7 +42,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
