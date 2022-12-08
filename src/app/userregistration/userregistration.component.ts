@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-userregistration',
@@ -17,6 +18,7 @@ export class UserregistrationComponent {
   confirmpassword=""
 
   constructor(private router:Router){}
+  
 
 
 
@@ -32,6 +34,8 @@ export class UserregistrationComponent {
       "confirmpassword":this.password
   }
     console.log(data)
+
+  
 
     if (this.password==this.confirmpassword) {
 
