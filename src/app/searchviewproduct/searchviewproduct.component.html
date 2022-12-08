@@ -25,18 +25,19 @@
                     <input name="name" [(ngModel)]="name" type="text" class="form-control">
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                    <button (click)="readValue" class="btn btn-primary">Search Product</button>
+                    <button (click)="readValue()" class="btn btn-primary">Search Product</button>
                 </div>
             </div>
-            <div class="row g-3 mt-4" *ngFor="let j of searchdata">
-                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3 mt-4" >
+                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3" *ngFor="let j of searchdata">
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{j.image}}" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Name : {{j.name}}</h5>
                           <p class="card-text">Description : {{j.description}}</p>
                           <p class="card-text">Category : {{j.category}}</p>
                           <p class="card-text">Price : {{j.price}}</p>
+                          <a href="#" class="btn btn-primary">Buy</a>
                         </div>
                       </div>
                 </div>

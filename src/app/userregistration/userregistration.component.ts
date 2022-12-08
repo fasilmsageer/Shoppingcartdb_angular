@@ -17,7 +17,7 @@ export class UserregistrationComponent {
   password=""
   confirmpassword=""
 
-  constructor(private router:Router){}
+  constructor(private router:Router,private api:ApiService){}
   
 
 
@@ -35,11 +35,30 @@ export class UserregistrationComponent {
   }
     console.log(data)
 
-  
+    
 
     if (this.password==this.confirmpassword) {
 
       this.router.navigate(['/userlogin'])
+
+      this.api.adduser(data).subscribe(
+        (response:any)=>{
+          console.log(response)
+          if (response.status=="success"){
+            this.name=""
+            this.address=""
+            this.phonenumber=""
+            this.email=""
+            this.username=""
+            this.password=""
+            this.confirmpassword=""
+          } else{
+            alert("something went wrong")
+  
+          }
+          
+        }
+      )
       
       
     } else {
