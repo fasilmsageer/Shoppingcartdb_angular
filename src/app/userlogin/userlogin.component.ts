@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 })
 export class UserloginComponent {
 
-  username=""
+  email=""
   password=""
 
   constructor(private router:Router,private api:ApiService){}
@@ -17,13 +17,13 @@ export class UserloginComponent {
   readlogin=()=>
   {
     let data:any={
-      "username":this.username,
+      "email":this.email,
       "password":this.password
   }
 
-  this.api.adduser(data).subscribe(
+  this.api.adduserlogin(data).subscribe(
     (response:any)=>{
-      this.username="",
+      this.email="",
       this.password=""
       if(response.status == "success"){
         let userId = response.userId
@@ -35,7 +35,17 @@ export class UserloginComponent {
       }
     }
   )
-    
+    console.log(data)
+
+    if (this.email=="fasil" && this.password=="987654") {
+
+      this.router.navigate(['/searchviewproduct'])
+      
+      
+    } else {
+      alert("invalid login")
+      
+    }
   }
 
 }

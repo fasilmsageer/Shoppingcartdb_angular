@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 
 const myRoute=[
   {
@@ -43,6 +44,10 @@ const myRoute=[
   {
     path:"searchviewproduct",
     component:SearchviewproductComponent
+  },
+  {
+    path:"viewprofile",
+    component:ViewprofileComponent
   }
 ]
 
@@ -56,7 +61,8 @@ const myRoute=[
     UserloginComponent,
     UserregistrationComponent,
     AdminloginComponent,
-    NavbarComponent
+    NavbarComponent,
+    ViewprofileComponent
   ],
   imports: [
     BrowserModule,

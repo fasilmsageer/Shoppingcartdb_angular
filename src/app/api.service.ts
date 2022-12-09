@@ -20,8 +20,11 @@ export class ApiService {
   {
     return this.http.post("http://localhost:8080/searchproduct",dataToSend)
   }
-  adduser=(dataToSend:any)=>
+  adduserlogin=(dataToSend:any)=>
   {
-    return this.http.post("http://localhost:8080/adduser",dataToSend)
+    return this.http.post("http://localhost:8080/adduserlogin",dataToSend)
+  }
+  getProfileDetails=(data:any)=>{
+    return this.http.post("http://localhost:8080/searchuser",data)
   }
 }

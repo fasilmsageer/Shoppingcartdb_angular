@@ -41,7 +41,7 @@ export class UserregistrationComponent {
 
       this.router.navigate(['/userlogin'])
 
-      this.api.adduser(data).subscribe(
+      this.api.adduserlogin(data).subscribe(
         (response:any)=>{
           console.log(response)
           if (response.status=="success"){
