@@ -8,7 +8,18 @@ import { ApiService } from '../api.service';
 })
 export class SearchviewproductComponent {
 
-  constructor(private api:ApiService){}
+  constructor(private api:ApiService){
+    api.fetchproduct().subscribe(
+  
+      (response)=>{
+        this.searchdata=response;
+      }
+    )
+  }
+  
+
+
+  
 
   name=""
   searchdata:any=[]
